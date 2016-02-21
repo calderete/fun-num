@@ -9,7 +9,22 @@
 		</div>
 
 		<div class="input_field">
-			<%= label_tag "Miles or kilometers (M or K" %><br>
+			<%= label_tag "Miles or kilometers M or K" %><br>
+			<%= text_field_tag :scale %>
+		</div>
+			<%= submit_tag "Convert" %>
+	<% end %>
+
+	<p>An astronomical unit is the distance between the earth and the sun, roughly 93 million miles. Enter the amount of AU you wish to convert into miles or kilometers</p>
+
+		<%= form_tag(from_au_path) do %>
+			<div class="input_field">
+				<%= label_tag "AU" %><br>
+				<%= text_field_tag :distance %>
+			</div>
+
+			<div class="input_field">
+			<%= label_tag "Miles or kilometers M or K" %><br>
 			<%= text_field_tag :scale %>
 		</div>
 			<%= submit_tag "Convert" %>
