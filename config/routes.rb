@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+root 'home#welcome'
+get 'temp_conversion', to: 'temp_converter#temp_convert_selector', as: 'temp_convert'
 
 post 'conversion/temp/f_to_c', to: 'temp_converter#f_to_c'
 post 'conversion/temp/to_k', to: 'temp_converter#to_k'

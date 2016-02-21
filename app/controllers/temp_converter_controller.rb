@@ -1,5 +1,9 @@
 class TempConverterController < ApplicationController
 
+	def temp_convert_selector
+		render :temp_convert
+	end
+
 	def f_to_c
 		temp, scale = params[:temp].to_f, params[:scale].downcase
 		case scale
