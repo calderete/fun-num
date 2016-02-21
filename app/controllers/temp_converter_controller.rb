@@ -1,7 +1,7 @@
 class TempConverterController < ApplicationController
 
 	def temp_convert_selector
-		render :temp_convert
+		render :temp_convert, locals: {temp: @temp_convert, scale: @scale_convert}
 	end
 
 	def f_to_c

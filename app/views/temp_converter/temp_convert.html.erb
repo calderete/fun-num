@@ -1,1 +1,14 @@
 <h2>Lets get temperature</h2>
+
+<%= form_tag(f2c_convert_path) do %>
+	<div class="input_field">
+  	<%= label_tag "Temperature: " %>
+  	<%= text_field_tag :temp, @temp_convert %>
+	</div>
+
+	<div class="input_field">
+		<%= label_tag "Scale: F or C" %>
+		<%= text_field_tag :scale, @scale_convert %>
+	</div>
+		<%= submit_tag "Convert!"%>
+<% end %>
