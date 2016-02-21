@@ -42,15 +42,15 @@ class DistanceConverterController < ApplicationController
 			render :answer
 		when "k" 
 			d = distance * 3.086e13
-			@answer = "#{distance} parsecs is " + d.to_s + "Miles"
+			@answer = "#{distance} parsecs is " + d.to_s + "Kilometers"
 			render :answer
 		when "ly"
 			d = distance * 3.2656
-			@answer = "#{distance} parsecs is " + d.to_s + "Miles"
+			@answer = "#{distance} parsecs is " + d.to_s + "Lightyears"
 			render :answer
 		when "au"
 			d = distance * 2.0626e5
-			@answer = "#{distance} parsecs is " + d.to_s + "Miles"
+			@answer = "#{distance} parsecs is " + d.to_s + "AU"
 			render :answer
 		end			
 	end

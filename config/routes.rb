@@ -23,6 +23,7 @@ post 'conversion/temp/from_k', to: 'temp_converter#from_k', as: 'from_k'
 get 'distance', to: 'distance_converter#distance_selector', as: 'distance_convert'
 post 'conversion/distance/from_ly', to: 'distance_converter#from_lightyears', as: 'from_ly'
 post 'conversion/distance/from_au', to: 'distance_converter#from_au', as: 'from_au'
+post 'conversion/distance/from_parsec', to: 'distance_converter#from_parsec', as: 'from_parsec'
   # Example resource route with options:
   #   resources :products dos
   #     member do
