@@ -1,0 +1,16 @@
+<h2>Lets go the Distance</h2>
+
+<p>Type in how many light years and in what scale: miles "m" or kilometers "k".
+
+	<%= form_tag(from_ly_path) do %>
+		<div class ="input_field">
+			<%= label_tag "Light Years" %><br>
+			<%= text_field_tag :distance %>
+		</div>
+
+		<div class="input_field">
+			<%= label_tag "Miles or kilometers (M or K" %><br>
+			<%= text_field_tag :scale %>
+		</div>
+			<%= submit_tag "Convert" %>
+	<% end %>

@@ -20,8 +20,10 @@ post 'conversion/temp/f_to_c', to: 'temp_converter#f_to_c', as: 'f2c_convert'
 post 'conversion/temp/to_k', to: 'temp_converter#to_k', as: 'to_k'
 post 'conversion/temp/from_k', to: 'temp_converter#from_k', as: 'from_k'
 
+get 'distance', to: 'distance_converter#distance_selector', as: 'distance_convert'
+post 'conversion/distance/from_ly', to: 'distance_converter#from_lightyears', as: 'from_ly'
   # Example resource route with options:
-  #   resources :products do
+  #   resources :products dos
   #     member do
   #       get 'short'
   #       post 'toggle'
