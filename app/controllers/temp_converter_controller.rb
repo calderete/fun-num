@@ -1,18 +1,18 @@
 class TempConverterController < ApplicationController
 
 	def temp_convert_selector
-		render :temp_convert, locals: {temp: @temp_convert, scale: @scale_convert}
+		render :temp_convert, locals: {temp: @temp, scale: @scale}
 	end
 
 	def f_to_c
 		temp, scale = params[:temp].to_f, params[:scale].downcase
 		case scale
 		when "c"
-			f = 1.8 * temp + 32
-			render json: {message: "#{f} degrees C"}, status: 200
+			t, s = 1.8 * temp + 32, "Farenhiet"
+			show_answer(temp, scale, t, s)
 		when "f"
-			c = (5.0/9.0)*(temp - 32)
-			render json: {message: "#{c} degrees F"}, status: 200
+			t,s = (5.0/9.0)*(temp - 32), "Celsius"
+			show_answer(temp, scale, t, s)
 		else 
 			render json: {message: "#{temp}, or #{scale} is not valid"},
 										status: 400 
@@ -23,11 +23,11 @@ class TempConverterController < ApplicationController
 		temp, scale = params[:temp].to_f, params[:scale].downcase
 		case scale
 			when "f"
-				f2k = (temp - 32) * 5.0/9.0 + 273.15
-				render json: { message:"#{f2k} degrees Kelvin"}, status: 200
+				t, s = (temp - 32) * 5.0/9.0 + 273.15, "Kelvin"
+				show_answer(temp, scale, t, s)
 			when "c"
-				c2k = temp + 273.15
-				render json: {message: "#{c2k} degrees Kelvin"}, status: 200
+				t, s = temp + 273.15, "Kelvin"
+				show_answer(temp, scale, t, s)
 			else
 				render json: {message: "#{temp}, or #{scale} is not valid"},
 										status: 400 
@@ -38,16 +38,24 @@ class TempConverterController < ApplicationController
 		temp, scale = params[:temp].to_f, params[:scale].downcase
 		case scale
 			when "f"
-				k2f = temp - 273.15 * 9.0/5.0 + 32
-				render json: {message: "#{k2f} degrees F"}
+				t = temp - 273.15 * 9.0/5.0 + 32
+				@answer = "#{temp} degrees Kelvin =" + t.to_s + "#{scale}"
+				render :temp_answer
 			when "c"
-				k2c = temp - 273.15
-				render json: {message: "#{k2c} degrees C"}
+				t = temp - 273.15
+				@answer = "#{temp} degrees Kelvin =" + t.to_s + "#{scale}"
+				render :temp_answer
 			else
 				render json: {message: "#{temp}, or #{scale} is not valid"},
 										status: 400 
 		end
 	end
+
+	def show_answer(temp, scale, t, s)
+		@answer = "#{temp} degrees #{scale} = " + t.to_s + " #{s}"
+			render :temp_answer
+	end
+
 end
 
 
