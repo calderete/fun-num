@@ -16,7 +16,8 @@ class DistanceConverterController < ApplicationController
 				@answer = "#{distance.to_i} lightyears is " + d.to_s + "Kilometers"
 				render :answer
 			else
-				render json: {message: "#{distance} or #{scale} is not valid"}
+				render json: {message: "#{scale} is invalid go back and enter 'm' or 'k'"},
+											status: 400
 		end
 	end
 
@@ -30,6 +31,9 @@ class DistanceConverterController < ApplicationController
 			when "k"
 				d = distance * 1496e8
 				@answer = "#{distance} astronimcal units is " + d.to_s + "Kilometers"
+			else
+				render json: {message: "#{scale} is invalid. Go back and enter 'm' or 'k'"},
+											status: 400
 			end
 	end
 
@@ -52,6 +56,9 @@ class DistanceConverterController < ApplicationController
 			d = distance * 2.0626e5
 			@answer = "#{distance} parsecs is " + d.to_s + "AU"
 			render :answer
+		else
+			render json: {message: "#{scale} is invalid. Go back and enter 'm' or 'k'"},
+										status: 400
 		end			
 	end
 

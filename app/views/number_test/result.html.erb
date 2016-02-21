@@ -1,0 +1,10 @@
+<h2>Done!</h2>
+	<b><%= @result %></b>
+
+	<h3>Try another!</h3>
+
+   <%= form_tag(happy_test_path) do %>
+		 <%= render partial: "happy_test" %> 
+	 <% end %>
+
+	 <%= render partial: "nav_back" %>

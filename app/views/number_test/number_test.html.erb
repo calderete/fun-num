@@ -1,0 +1,8 @@
+<h2>Welcome to the FunNum number tester, where we try to break FunNum</h2>
+
+<h3>"Happy Number" tester</h3>
+<p>Happy numbers are described <a href="https://en.wikipedia.org/wiki/Happy_number">here</a>. This program will reduce any whole number into either 1 or 4 based on the happy number rules. If you can get a json response "I have no idea how to deal with this" please let me know what the number was.</p>
+
+	<%= form_tag(happy_test_path) do %>
+		<%= render partial: "happy_test" %>
+	<% end %>

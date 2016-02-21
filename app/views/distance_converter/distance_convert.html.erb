@@ -1,49 +1,10 @@
 <h2>Lets go the Distance</h2>
 
-<p>Type in how many <b>Light years</b> you wish to convert into <b>Miles</b> or <b>Kilometers</b>
+<%= render partial: "distance_list" %>
 
-	<%= form_tag(from_ly_path) do %>
-		<div class ="input_field">
-			<%= label_tag "Light Years" %><br>
-			<%= text_field_tag :distance %>
-		</div>
-
-		<div class="input_field">
-			<%= label_tag "Miles or kilometers M or K" %><br>
-			<%= text_field_tag :scale %>
-		</div>
-			<%= submit_tag "Convert" %>
-	<% end %>
-
-	<p>An <b>Astronomical Unit</b>(AU) is the distance between the earth and the sun, roughly 93 million miles. Enter the amount of <b>AU</b> you wish to <i>convert into</i> <b>miles</b> or <b>kilometers</b></p>
-
-		<%= form_tag(from_au_path) do %>
-			<div class="input_field">
-				<%= label_tag "AU" %><br>
-				<%= text_field_tag :distance %>
-			</div>
-
-			<div class="input_field">
-			<%= label_tag "Miles or kilometers M or K" %><br>
-			<%= text_field_tag :scale %>
-			</div>
-			<%= submit_tag "Convert" %>
-		<% end %>
-
-	<p>A <b>Parsec</b> is an astronomical measurement described <a href="https://en.wikipedia.org/wiki/Parsec">Here</a>. Type the amount of parsecs you wish to convert and into which unit of measure.
-
-		<%= form_tag(from_parsec_path) do %>
-			<div class="input_field">
-				<%= label_tag "Parsecs" %><br>
-				<%= text_field_tag :distance %>
-			</div>
-
-			<div class="input_field">
-			<%= label_tag "Convert to: Miles 'm', kilometers 'k', Lightyears 'ly', or AU 'au'" %><br>
-			<%= text_field_tag :scale %>
-			</div>
-			<%= submit_tag "Convert" %>
-		<% end %>
+<ul>
+	<li> <%= link_to "Back to Home", home_path %></li>
+</ul>
 
 
 

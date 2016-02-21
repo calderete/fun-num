@@ -14,7 +14,7 @@ class TempConverterController < ApplicationController
 			t,s = (5.0/9.0)*(temp - 32), "Celsius"
 			show_answer(temp, scale, t, s)
 		else 
-			render json: {message: "#{temp}, or #{scale} is not valid"},
+			render json: {message: "#{scale} is invalid go back and enter 'f' or 'c'"},
 										status: 400 
 		end
 	end
@@ -29,7 +29,7 @@ class TempConverterController < ApplicationController
 				t, s = temp + 273.15, "Kelvin"
 				show_answer(temp, scale, t, s)
 			else
-				render json: {message: "#{temp}, or #{scale} is not valid"},
+				render json: {message: "#{scale} is invalid go back and enter 'f' or 'c'"},
 										status: 400 
 		end
 	end
@@ -46,7 +46,7 @@ class TempConverterController < ApplicationController
 				@answer = "#{temp} degrees Kelvin =" + t.round(3).to_s + "#{scale.upcase}"
 				render :temp_answer
 			else
-				render json: {message: "#{temp}, or #{scale} is not valid"},
+				render json: {message: "##{scale} is invalid go back and enter 'f' or 'c'"},
 										status: 400 
 		end
 	end

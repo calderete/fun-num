@@ -1,0 +1,26 @@
+<p>For <b>Farenhiet</b> to <b>Celsius</b> or vice versa enter a temperature and what scale it is in such as "32" in the temperature field and "F" or "C" in the scale field</p>
+
+<%= form_tag(f2c_convert_path) do %>
+	<%= render partial: "forms" %>
+<% end %>
+
+<p>To convert <b>standard</b> temperatures <i>into</i> <b>Kelvin</b> enter the temperature and what scale it is in. FunNum will then convert it into Kelvin</p>
+
+<%= form_tag(to_k_path) do %>
+	<%= render partial: "forms" %>
+<% end %>
+
+<p>To convert <b>Kelvin</b> temperatures <i>into</i> <b>standard</b> temperatures, enter the degrees in kelvin and then the scale (F or C) you wish to convert to</p>
+
+<%= form_tag(from_k_path) do %>
+	<div class="input_field">
+  	<%= label_tag "Temperature: " %><br>
+  	<%= number_field_tag :temp %>
+	</div>
+
+	<div class="input_field">
+		<%= label_tag "Scale you are converting to Kelvin: F or C" %><br>
+		<%= text_field_tag :scale %>
+	</div>
+		<%= submit_tag "Convert!"%>
+<% end %>
