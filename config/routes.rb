@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
 post 'conversion/temp/f_to_c', to: 'temp_converter#f_to_c'
 post 'conversion/temp/to_k', to: 'temp_converter#to_k'
+post 'conversion/temp/from_k', to: 'temp_converter#from_k'
 
   # Example resource route with options:
   #   resources :products do
