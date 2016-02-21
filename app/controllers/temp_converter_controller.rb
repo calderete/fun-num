@@ -39,11 +39,11 @@ class TempConverterController < ApplicationController
 		case scale
 			when "f"
 				t = temp - 273.15 * 9.0/5.0 + 32
-				@answer = "#{temp} degrees Kelvin =" + t.to_s + "#{scale}"
+				@answer = "#{temp} degrees Kelvin =" + t.round(3).to_s + "#{scale.upcase}"
 				render :temp_answer
 			when "c"
 				t = temp - 273.15
-				@answer = "#{temp} degrees Kelvin =" + t.to_s + "#{scale}"
+				@answer = "#{temp} degrees Kelvin =" + t.round(3).to_s + "#{scale.upcase}"
 				render :temp_answer
 			else
 				render json: {message: "#{temp}, or #{scale} is not valid"},
@@ -52,7 +52,7 @@ class TempConverterController < ApplicationController
 	end
 
 	def show_answer(temp, scale, t, s)
-		@answer = "#{temp} degrees #{scale} = " + t.to_s + " #{s}"
+		@answer = "#{temp} degrees #{scale.upcase} = " + t.round(3).to_s + " #{s.upcase}"
 			render :temp_answer
 	end
 
