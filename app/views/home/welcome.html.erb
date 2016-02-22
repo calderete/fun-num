@@ -1,12 +1,19 @@
-<div class ="title">
-	<h1>Welcome to FunNum</h1>
-</div>
-		<p>Please select which measurments you with to convert</p>
-			<ul>
-				<li><%= link_to "Temperature", (temp_convert_path) %></li>
-				<li><%= link_to "Distances", (distance_convert_path) %></li>
-			</ul>
 
-			<ul>
-				<li><%= link_to "Data Tests!!", (number_test_path) %></li>
-			</ul>
+<body>
+	<div id="main-container" class="container">
+		
+		<div class="row">
+			<div class="col-xs-9">
+				<nav class="navbar navbar-default" role="navigation">
+					<%= link_to 'Temperature', temp_convert_path %>
+					<%= link_to "Distances", (distance_convert_path) %>
+					<%= link_to "Data Tests!!", (number_test_path) %>
+				</nav>
+			</div>	
+			<div id="main-content" class="col-xs-9">
+				<h1>Welcome to FunNum</h1>
+				<p>Please select which measurments you with to convert</p>
+			</div>
+		</div>
+	</div>
+</body>
