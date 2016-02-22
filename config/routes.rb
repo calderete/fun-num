@@ -27,6 +27,8 @@ post 'conversion/distance/from_parsec', to: 'distance_converter#from_parsec', as
 
 get  'test/number', to: 'number_test#test_selector', as: 'number_test'  
 post 'test/happy_number', to: 'number_test#happy_test', as: 'happy_test'
+  
+post 'test/levenshtein', to: 'levenshtein#compare', as: 'levenshtein_test'
   #   resources :products dos
   #     member do
   #       get 'short'

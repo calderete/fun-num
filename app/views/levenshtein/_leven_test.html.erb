@@ -1,0 +1,14 @@
+<%= form_tag(levenshtein_test_path) do %>
+		<div class="input_field">
+			<%= label_tag "String One" %><br>
+			<%= text_field_tag :s1 %><br>
+			<%= label_tag "String Two" %><br>
+			<%= text_field_tag :s2 %>
+		</div>
+			<%= submit_tag "Calculate" %>
+<% end %>
+
+<ul>
+	<li><%= link_to "Back to Data Tester", number_test_path %></li>
+	<li><%= link_to "Back to home", home_path %></li>
+</ul>

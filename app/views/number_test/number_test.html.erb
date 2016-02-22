@@ -1,4 +1,17 @@
-<h2>Welcome to the FunNum number tester, where we try to break FunNum</h2>
+<h2>Welcome to the FunNum data tester, where we try to break FunNum</h2>
+
+<h3>"Levenshtein" distance</h3>
+<p>The Levenshtein distance is the minimum number of modifications that need to be made for to change one string into another by adding, deleting or substituting characters. 
+
+	<%= form_tag(levenshtein_test_path) do %>
+		<div class="input_field">
+			<%= label_tag "String One" %><br>
+			<%= text_field_tag :s1 %><br>
+			<%= label_tag "String Two" %><br>
+			<%= text_field_tag :s2 %><br>
+		</div>
+			<%= submit_tag "Calculate" %>
+	<% end %>
 
 <h3>"Happy Number" tester</h3>
 <p>Happy numbers are described <a href="https://en.wikipedia.org/wiki/Happy_number">here</a>. This program will reduce any whole number into either 1 or 4 based on the happy number rules. If you can get a json response "I have no idea how to deal with this" please let me know what the number was.</p>
@@ -6,3 +19,5 @@
 	<%= form_tag(happy_test_path) do %>
 		<%= render partial: "happy_test" %>
 	<% end %>
+
+	<li><%= link_to "Home", home_path %></li>

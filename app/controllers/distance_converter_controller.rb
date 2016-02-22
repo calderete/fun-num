@@ -73,9 +73,6 @@ class DistanceConverterController < ApplicationController
 			render json: {message: "invalid distance"}
 		end			
 	end
-
-	
-
 end
 
 
