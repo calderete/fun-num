@@ -4,7 +4,7 @@ class LevenshteinController < ApplicationController
 		s1 = params[:s1]
 		s2 = params[:s2]
 		distance = levenshtein(s1, s2)
-		@answer = "The levenshtein distance between #{s1} and #{s2} is #{distance}"
+		@answer = "The levenshtein distance between '#{s1}' and '#{s2}' is #{distance}"
 		render :answer
 	end
 
