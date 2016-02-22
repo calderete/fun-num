@@ -3,7 +3,7 @@
 	<%= form_tag(from_ly_path) do %>
 		<div class ="input_field">
 			<%= label_tag "Light Years" %><br>
-			<%= number_field_tag :distance %>
+			<%= text_field_tag :distance %>
 		</div>
 
 		<div class="input_field">
@@ -18,7 +18,7 @@
 		<%= form_tag(from_au_path) do %>
 			<div class="input_field">
 				<%= label_tag "AU" %><br>
-				<%= number_field_tag :distance %>
+				<%= text_field_tag :distance %>
 			</div>
 
 			<div class="input_field">
@@ -33,7 +33,7 @@
 		<%= form_tag(from_parsec_path) do %>
 			<div class="input_field">
 				<%= label_tag "Parsecs" %><br>
-				<%= number_field_tag :distance %>
+				<%= text_field_tag :distance %>
 			</div>
 
 			<div class="input_field">
