@@ -12,15 +12,12 @@
 
 <p>To convert <b>Kelvin</b> temperatures <i>into</i> <b>standard</b> temperatures, enter the degrees in kelvin and then the scale (F or C) you wish to convert to</p>
 
-<%= form_tag(from_k_path) do %>
-	<div class="input_field">
-  	<%= label_tag "Temperature: " %><br>
-  	<%= number_field_tag :temp %>
-	</div>
 
-	<div class="input_field">
-		<%= label_tag "Scale you are converting to Kelvin: F or C" %><br>
+	<%= form_tag(from_k_path) do %>
+  	<%= label_tag "Temperature: " %>
+  	<%= number_field_tag :temp %>
+		<%= label_tag "Scale you are converting to Kelvin: F or C" %>
 		<%= text_field_tag :scale %>
-	</div>
+
 		<%= submit_tag "Convert!"%>
-<% end %>
+	<% end %>
