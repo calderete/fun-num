@@ -31,6 +31,7 @@ post 'test/happy_number', to: 'number_test#happy_test', as: 'happy_test'
 post 'test/levenshtein', to: 'levenshtein#compare', as: 'levenshtein_test'
 
 get 'eve/pi', to: 'eve_pi#menu', as: 'eve_pi'
+post 'eve/pi', to: 'eve_pi#data', as: 'pi_data'
   #   resources :products dos
   #     member do
   #       get 'short'
