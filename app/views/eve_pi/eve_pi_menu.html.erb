@@ -1,1 +1,15 @@
 <h2>Welcome To EchoGlobal Commodities Tracking and Managment Application </h2>
+
+  <%= form_tag(pi_data_path) do %>
+    <div class='input_field'>
+      <%= label_tag 'Contributor Name' %><br>
+      <%= text_field_tag :contributor %><br>
+      <%= label_tag 'PI Type' %><br>
+      <%= text_field_tag :pi_type %><br>
+      <%= label_tag 'Unit Price' %><br>
+      <%= text_field_tag :unit_price %><br>
+      <%= label_tag 'Unit Amount' %><br>
+      <%= text_field_tag :unit_amount %><br>
+    </div>
+      <%= submit_tag 'Submit' %><br>
+  <% end %>
